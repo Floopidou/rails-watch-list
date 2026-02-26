@@ -13,13 +13,7 @@
   </div>
   <div class="row g-3">
     <% @lists.each do |list| %>
-      <div class="col-6">
-        <%= link_to list_path(list), class: "text-decoration-none" do %>
-          <div class="list-card shadow-sm rounded d-flex align-items-end">
-            <h5 class="text-white fw-bold p-3 mb-0"><%= list.name %></h5>
-          </div>
-        <% end %>
-      </div>
+      <%= render "listcard", list: list %>
     <% end %>
   </div>
 </div>

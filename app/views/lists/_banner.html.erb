@@ -6,9 +6,18 @@
   </div>
 </div>
 <% else %>
-<div class="banner-list d-flex align-items-center justify-content-center text-white text-center">
-  <div>
-    <h1 class="fw-bold"> <%= list.name %> </h1>
-  </div>
-</div>
+<% if list.image_url.nil? %>
+    <div class="banner-list d-flex align-items-center justify-content-center text-white text-center">
+      <div>
+        <h1 class="fw-bold"> <%= list.name %> </h1>
+      </div>
+    </div>
+    <% else %>
+    <div class="banner-list d-flex align-items-center justify-content-center text-white text-center" style="background-image: url(<%= list.image_url %>)">
+      <div>
+        <h1 class="fw-bold"> <%= list.name %> </h1>
+      </div>
+    </div>
+    <% end %>
+
 <% end %>

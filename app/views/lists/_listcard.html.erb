@@ -1,0 +1,13 @@
+<div class="col-6">
+  <%= link_to list_path(list), class: "text-decoration-none" do %>
+    <% if list.image_url.nil? %>
+    <div class="list-card shadow-sm rounded d-flex justify-content-center align-items-center">
+      <h5 class="text-white fw-bold p-3 mb-0"><%= list.name %></h5>
+    </div>
+    <% else %>
+    <div class="list-card shadow-sm rounded d-flex justify-content-center align-items-center" style="background-image: url(<%= list.image_url %>)">
+      <h5 class="text-white fw-bold p-3 mb-0"><%= list.name %></h5>
+    </div>
+    <% end %>
+  <% end %>
+</div>
