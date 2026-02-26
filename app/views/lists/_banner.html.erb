@@ -1,0 +1,14 @@
+<% if home %>
+<div class="banner-home d-flex align-items-center justify-content-center text-white text-center">
+  <div>
+    <h1 class="fw-bold">Save any kind of movies</h1>
+    <p class="text-decoration-underline">Classic</p>
+  </div>
+</div>
+<% else %>
+<div class="banner-list d-flex align-items-center justify-content-center text-white text-center">
+  <div>
+    <h1 class="fw-bold"> <%= list.name %> </h1>
+  </div>
+</div>
+<% end %>

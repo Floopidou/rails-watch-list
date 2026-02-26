@@ -1,0 +1,15 @@
+// Specific CSS for your home-page
+
+.banner-home {
+  height: 320px;
+  background-image: asset_url("cinema_room.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-list {
+  height: 320px;
+  background-image: asset_url("list_bg.jpg");
+  background-size: cover;
+  background-position: center;
+}

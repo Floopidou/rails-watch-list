@@ -1,0 +1,85 @@
+.list-card {
+  height: 200px;
+  background-image: asset_url("list_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.movie-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 190px;
+
+  &-poster {
+    width: 120px;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &-body {
+    padding: 12px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  &-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-rating {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &-overview {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 8px;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  &-comment {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #444;
+    border-left: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &-delete {
+    font-size: 0.8rem;
+    color: #dc3545;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-end;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
