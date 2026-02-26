@@ -3,30 +3,16 @@
 
 <!-- Movies Section -->
 <div class="container my-4">
-  <div>
-    <%= link_to "Add movie", new_list_bookmark_path(@list), class: "btn btn-success" %>
-  </div>
   <div class="row">
-      <% @list.bookmarks.each do |bookmark| %>
-      <div class="col-6">
-        <div class="movie-card d-flex my-3">
-          <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title, class: "movie-card-poster" %>
-          <div class="movie-card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-start">
-              <h5 class="movie-card-title"><%= bookmark.movie.title %></h5>
-              <span class="movie-card-rating"><%= bookmark.movie.rating %> <i class="fa-solid fa-star text-warning"></i></span>
-            </div>
-            <p class="movie-card-overview"><%= truncate(bookmark.movie.overview, length: 150) %></p>
-
-            <div class="d-flex justify-content-between mt-auto ">
-              <blockquote class="movie-card-comment">
-                <i class="fa fa-quote-left"></i><%= bookmark.comment %>
-              </blockquote>
-              <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete }, class: "movie-card-delete" %>
-            </div>
-          </div>
-        </div>
+    <div class="col-8">
+      <div class="row">
+        <% @list.bookmarks.each do |list_bookmark| %>
+        <%= render "bookmarkcard", bookmark: list_bookmark %>
+        <% end %>
+      </div>
     </div>
-      <% end %>
+    <div class="col-3">
+      <%= render "bookmarkform", list: @list, bookmark: @bookmark %>
+    </div>
   </div>
 </div>
