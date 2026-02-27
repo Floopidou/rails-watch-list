@@ -1,5 +1,5 @@
-<%= render "navbar" %>
-<%= render "banner", home: false, list: @list %>
+<%= render "shared/my_navbar" %>
+<%= render "shared/banner_list", list: @list %>
 
 <!-- Movies Section -->
 <div class="container my-4">
@@ -7,12 +7,14 @@
     <div class="col-8">
       <div class="row">
         <% @list.bookmarks.each do |list_bookmark| %>
-        <%= render "bookmarkcard", bookmark: list_bookmark %>
+        <%= render "shared/bookmarkcard", bookmark: list_bookmark %>
         <% end %>
       </div>
     </div>
     <div class="col-3">
-      <%= render "bookmarkform", list: @list, bookmark: @bookmark %>
+      <div class="bookmark-form-sticky">
+        <%= render "shared/bookmarkform", list: @list, bookmark: @bookmark %>
+      </div>
     </div>
   </div>
 </div>

@@ -8,8 +8,92 @@
 }
 
 .banner-list {
-  height: 320px;
-  background-image: url("https://cdn.wallpapersafari.com/29/24/4Vg92a.jpg");
+  height: 200px;
   background-size: cover;
   background-position: center;
+}
+
+.bookmark-form-sticky {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.bookmark-form-card {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $yellow;
+    margin-bottom: 1.2rem;
+  }
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.3rem;
+  }
+
+  select,
+  textarea,
+  input[type="text"] {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: $yellow;
+      box-shadow: 0 0 0 3px rgba(255, 198, 90, 0.15);
+      outline: none;
+      color: white;
+    }
+
+    option {
+      background: #1a1a2e;
+      color: white;
+    }
+  }
+
+  .form-group,
+  .form-field {
+    margin-bottom: 1rem;
+  }
+
+  .btn-add-movie {
+    width: 100%;
+    background: linear-gradient(135deg, $yellow, $orange);
+    border: none;
+    border-radius: 8px;
+    color: #1a1a2e;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    letter-spacing: 0.03em;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s, transform 0.1s;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
 }

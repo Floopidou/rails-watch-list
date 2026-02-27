@@ -24,6 +24,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :image_url)
+    params.require(:list).permit(:name, :photo, :image_url) # added photo to manage, but it handles image_url as well
   end
 end

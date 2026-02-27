@@ -1,0 +1,22 @@
+<%# Cas sans photo ni url %>
+<% if list.image_url.nil? && !list.photo.attached? %>
+<div class="banner-list d-flex align-items-center justify-content-center text-white text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.wallpapersafari.com/29/24/4Vg92a.jpg)">
+  <div>
+    <h1 class="fw-bold"> <%= list.name %> </h1>
+  </div>
+</div>
+<%# Cas avec photo, qu'il y ait une url ou non %>
+<% elsif list.photo.attached? %>
+<div class="banner-list d-flex align-items-center justify-content-center text-white text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key, crop: :fill %>)">
+  <div>
+    <h1 class="fw-bold"> <%= list.name %> </h1>
+  </div>
+</div>
+<%# Cas sans photo, mais avec une url %>
+<% else %>
+<div class="banner-list d-flex align-items-center justify-content-center text-white text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>)">
+  <div>
+    <h1 class="fw-bold"> <%= list.name %> </h1>
+  </div>
+</div>
+<% end %>
